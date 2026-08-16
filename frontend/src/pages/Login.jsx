@@ -167,16 +167,18 @@ export default function Login() {
         </button>
 
         {mode === "login" && (
-          <button
-            type="button"
-            onClick={resetPassword}
-            disabled={sendingReset}
-            className="mt-3 text-sm text-blue-700 disabled:opacity-50"
-          >
-            {sendingReset
-              ? "Sending recovery email..."
-              : "Forgot password?"}
-          </button>
+          <div className="mt-3">
+            <button
+              type="button"
+              onClick={resetPassword}
+              disabled={sendingReset}
+              className="text-sm text-blue-700 disabled:opacity-50"
+            >
+              {sendingReset
+                ? "Sending recovery email..."
+                : "Forgot password?"}
+            </button>
+          </div>
         )}
 
         {message && (
@@ -185,23 +187,25 @@ export default function Login() {
           </p>
         )}
 
-        <button
-          type="button"
-          onClick={() => {
-            setMode(
-              mode === "signup"
-                ? "login"
-                : "signup"
-            );
+        <div className="mt-5">
+          <button
+            type="button"
+            onClick={() => {
+              setMode(
+                mode === "signup"
+                  ? "login"
+                  : "signup"
+              );
 
-            setMessage("");
-          }}
-          className="mt-5 text-sm text-blue-700"
-        >
-          {mode === "signup"
-            ? "Already have an account? Sign in"
-            : "Need an account? Register"}
-        </button>
+              setMessage("");
+            }}
+            className="text-sm text-blue-700"
+          >
+            {mode === "signup"
+              ? "Already have an account? Sign in"
+              : "Need an account? Register"}
+          </button>
+        </div>
       </form>
     </div>
   );
