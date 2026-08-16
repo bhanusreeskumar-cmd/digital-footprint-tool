@@ -17,6 +17,7 @@ import History from "./pages/History";
 import Removals from "./pages/Removals";
 import Admin from "./pages/Admin";
 import ReviewResults from "./pages/ReviewResults";
+import ResetPassword from "./pages/ResetPassword";
 
 function Protected({
   session,
@@ -89,6 +90,11 @@ export default function App() {
         }
       />
 
+      <Route
+        path="/reset-password"
+        element={<ResetPassword />}
+      />
+        
       <Route
         element={
           <Protected
